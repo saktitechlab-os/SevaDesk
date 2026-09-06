@@ -1,0 +1,152 @@
+.settings-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.settings-section h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item.danger-zone {
+  border-top: 1px solid var(--danger);
+  margin-top: 8px;
+  padding-top: 24px;
+}
+
+.setting-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.setting-info h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.setting-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.setting-value {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.setting-value code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  background: var(--bg-tertiary);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.font-badge, .version-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.font-badge {
+  background: var(--accent-light);
+  color: var(--accent-primary);
+}
+
+.version-badge {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.online {
+  background: #e8f5e9;
+  color: var(--success);
+}
+
+@media (max-width: 600px) {
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .setting-value {
+    width: 100%;
+  }
+  
+  .setting-value code {
+    max-width: 100%;
+  }
+}

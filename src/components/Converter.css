@@ -1,0 +1,261 @@
+.converter-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.converter-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+
+.panel-header h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.panel-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.panel-textarea {
+  flex: 1;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  line-height: 1.7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: transparent;
+  color: var(--text-primary);
+  min-height: 320px;
+}
+
+.panel-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.panel-textarea.kruti-output {
+  font-family: 'Kruti Dev 010', 'Kruti Dev', 'Mangal', monospace;
+  font-size: 16px;
+  background: #fafafa;
+}
+
+.panel-hint {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-color);
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+}
+
+.font-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.converter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.convert-btn {
+  min-width: 160px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+}
+
+.convert-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.bottom-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.converter-info {
+  margin-top: 24px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.converter-info details {
+  padding: 16px 20px;
+}
+
+.converter-info summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.converter-info summary::-webkit-details-marker {
+  display: none;
+}
+
+.converter-info summary::before {
+  content: '▸';
+  font-size: 10px;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+
+.converter-info details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.converter-info ul {
+  margin-top: 16px;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+.converter-info li {
+  padding-left: 8px;
+}
+
+.status-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+  max-width: 320px;
+}
+
+.status-toast.success {
+  background: var(--success);
+  color: white;
+}
+
+.status-toast.error {
+  background: var(--danger);
+  color: white;
+}
+
+.status-toast.info {
+  background: var(--accent-primary);
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .converter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .converter-actions {
+    padding-top: 0;
+    order: 2;
+  }
+  
+  .panel:first-child {
+    order: 1;
+  }
+  
+  .panel:last-child {
+    order: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-header h1 {
+    font-size: 22px;
+  }
+  
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .bottom-actions {
+    flex-direction: column;
+  }
+  
+  .bottom-actions button {
+    width: 100%;
+  }
+  
+  .status-toast {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
